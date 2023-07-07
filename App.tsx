@@ -4,8 +4,9 @@ import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { Typography } from "./components/Typography/Typography";
+
 import { colors } from "./constants/colors";
+import { Typography } from "./components/Typography/Typography";
 
 SplashScreen.preventAutoHideAsync();
 
