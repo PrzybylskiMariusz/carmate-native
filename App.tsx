@@ -5,8 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-import { colors } from "./constants/colors";
-import { Typography } from "./components/Typography/Typography";
+import { WelcomeScreen } from "./screens/WelcomeScreen";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,13 +27,8 @@ export default function App() {
 
 	return (
 		<View style={styles.container} onLayout={onLayoutRootView}>
-			<Typography variant="heading" textStyle={styles.textStyles}>
-				Carmate
-			</Typography>
-			<Typography variant="paragraph">
-				All your vehicles in your pocket
-			</Typography>
 			<StatusBar style="auto" />
+			<WelcomeScreen />
 		</View>
 	);
 }
@@ -45,10 +39,5 @@ const styles = StyleSheet.create({
 		backgroundColor: "#fff",
 		alignItems: "center",
 		justifyContent: "center",
-	},
-	textStyles: {
-		fontSize: 56,
-		lineHeight: 84,
-		color: colors.primary500,
 	},
 });
