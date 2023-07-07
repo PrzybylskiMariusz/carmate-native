@@ -8,31 +8,31 @@ export const Typography = ({
 	textStyle,
 	children,
 }: React.PropsWithChildren<TypographyProps>) => {
-	{
-		switch (variant) {
-			case "heading":
-				return <Text style={[textStyles.heading, textStyle]}>{children}</Text>;
-			case "title":
-				return <Text style={[textStyles.title, textStyle]}>{children}</Text>;
-			case "subtitle":
-				return <Text style={[textStyles.subtitle, textStyle]}>{children}</Text>;
-			case "paragraph":
-				return (
-					<Text style={[textStyles.paragraph, textStyle]}>{children}</Text>
-				);
-			case "nameBold":
-				return <Text style={[textStyles.nameBold, textStyle]}>{children}</Text>;
-			case "nameRegular":
-				return (
-					<Text style={[textStyles.nameRegular, textStyle]}>{children}</Text>
-				);
-			case "caption":
-				return <Text style={[textStyles.caption, textStyle]}>{children}</Text>;
-			case "helpText":
-				return <Text style={[textStyles.helpText, textStyle]}>{children}</Text>;
-			default:
-				return <Text>{children}</Text>;
-		}
+	const variantStyle = getVariantStyle(variant);
+
+	return <Text style={[variantStyle, textStyle]}>{children}</Text>;
+};
+
+const getVariantStyle = (variant: string) => {
+	switch (variant) {
+		case "heading":
+			return textStyles.heading;
+		case "title":
+			return textStyles.title;
+		case "subtitle":
+			return textStyles.subtitle;
+		case "paragraph":
+			return textStyles.paragraph;
+		case "nameBold":
+			return textStyles.nameBold;
+		case "nameRegular":
+			return textStyles.nameRegular;
+		case "caption":
+			return textStyles.caption;
+		case "helpText":
+			return textStyles.helpText;
+		default:
+			return textStyles.paragraph;
 	}
 };
 

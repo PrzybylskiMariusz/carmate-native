@@ -1,4 +1,4 @@
-const TYPOGRAPHY_PROPS = {
+const TYPOGRAPHY_VARIANT = {
 	heading: "heading",
 	title: "title",
 	subtitle: "subtitle",
@@ -12,6 +12,6 @@ const TYPOGRAPHY_PROPS = {
 type ObjectValues<T> = T[keyof T];
 
 export type TypographyProps = {
-	variant: ObjectValues<typeof TYPOGRAPHY_PROPS>;
+	variant: ObjectValues<typeof TYPOGRAPHY_VARIANT>;
 	textStyle?: {};
 };
