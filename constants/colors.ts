@@ -1,0 +1,18 @@
+export const colors = {
+	primary500: "hsl(235, 66%, 30%)",
+	primary300: "hsl(232, 54%, 41%)",
+	secondary500: "hsl(231, 99%, 59%)",
+	secondary400: "hsl(231, 99%, 66%)",
+	tertiary500: "hsl(204, 15%, 94%)",
+	tertiary700: "hsl(198, 16%, 84%)",
+	accent500: "hsl(200, 18%, 46%)",
+	violet500: "hsl(231, 100%, 77%)",
+	violet100: "hsl(231, 44%, 94%)",
+	gray500: "hsl(200, 15%, 73%)",
+	gray20: "hsl(0, 0%, 96%)",
+	black: "hsl(200, 19%, 18%)",
+	white: "hsl(0, 0%, 100%)",
+	error: "hsl(0, 65%, 51%)",
+	warning: "hsl(54, 100%, 62%)",
+	success: "hsl(88, 50%, 53%)",
+};
