@@ -1,9 +1,11 @@
 import { useCallback } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { Typography } from "./components/Typography/Typography";
+import { colors } from "./constants/colors";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,7 +27,12 @@ export default function App() {
 
 	return (
 		<View style={styles.container} onLayout={onLayoutRootView}>
-			<Text>Open up App.tsx to start working on your app!</Text>
+			<Typography variant="heading" textStyle={styles.textStyles}>
+				Carmate
+			</Typography>
+			<Typography variant="paragraph">
+				All your vehicles in your pocket
+			</Typography>
 			<StatusBar style="auto" />
 		</View>
 	);
@@ -37,5 +44,10 @@ const styles = StyleSheet.create({
 		backgroundColor: "#fff",
 		alignItems: "center",
 		justifyContent: "center",
+	},
+	textStyles: {
+		fontSize: 56,
+		lineHeight: 84,
+		color: colors.primary500,
 	},
 });
