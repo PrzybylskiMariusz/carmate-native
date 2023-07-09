@@ -3,19 +3,22 @@ import { View, StyleSheet } from "react-native";
 import { colors } from "../constants/colors";
 import { Typography } from "../components/Typography/Typography";
 import { Button } from "../components/Button/Button";
+import { Container } from "../components/Container/Container";
 
 export const WelcomeScreen = () => {
 	return (
 		<View style={styles.container}>
-			<Typography variant="heading" textStyle={styles.textStyles}>
-				.car
-				<Typography variant="heading" textStyle={styles.textStylesSpan}>
-					mate
+			<Container>
+				<Typography variant="heading" textStyle={styles.textStyles}>
+					.car
+					<Typography variant="heading" textStyle={styles.textStylesSpan}>
+						mate
+					</Typography>
 				</Typography>
-			</Typography>
-			<Typography variant="paragraph">
-				All your vehicles in your pocket
-			</Typography>
+				<Typography variant="paragraph">
+					All your vehicles in your pocket
+				</Typography>
+			</Container>
 			<View style={styles.buttonContainer}>
 				<Button variant="primary" label="Primary Button" />
 				<Button variant="ghost" label="Ghost Button" />
