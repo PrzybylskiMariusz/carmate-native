@@ -22,6 +22,11 @@ export const WelcomeScreen = () => {
 			<View style={styles.buttonContainer}>
 				<Button variant="primary" label="Primary Button" />
 				<Button variant="ghost" label="Ghost Button" />
+				<Button
+					variant="secondary"
+					label="Secondary Button"
+					iconName="logout"
+				/>
 			</View>
 		</View>
 	);

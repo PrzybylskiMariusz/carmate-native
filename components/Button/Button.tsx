@@ -1,4 +1,7 @@
 import { Text, StyleSheet, Pressable } from "react-native";
+
+import { MaterialIcons } from "@expo/vector-icons";
+
 import { ButtonProps } from "./Button.types";
 import { colors } from "../../constants/colors";
 
@@ -6,6 +9,7 @@ export const Button = ({
 	variant,
 	buttonStyle,
 	label,
+	iconName,
 	onPress,
 }: ButtonProps) => {
 	const buttonVariantStyle = getVariantStyle(variant);
@@ -15,6 +19,19 @@ export const Button = ({
 			style={[buttonStyles.rootContainer, buttonVariantStyle, buttonStyle]}
 			onPress={onPress}>
 			<Text style={[buttonStyles.rootText, textStyle]}>{label}</Text>
+			{iconName && (
+				<MaterialIcons
+					name={iconName}
+					size={16}
+					color={
+						variant === "primary"
+							? colors.white
+							: variant === "secondary"
+							? colors.white
+							: colors.primary500
+					}
+				/>
+			)}
 		</Pressable>
 	);
 };
@@ -38,9 +55,13 @@ const getVariantStyle = (variant: string) => {
 
 const getTextStyle = (variant: string) => {
 	switch (variant) {
-		case "primary" || "secondary":
+		case "primary":
 			return buttonStyles.whiteCapLabel;
-		case "tertiary" || "ghost":
+		case "secondary":
+			return buttonStyles.whiteCapLabel;
+		case "tertiary":
+			return buttonStyles.primCapLabel;
+		case "ghost":
 			return buttonStyles.primCapLabel;
 		case "textButton":
 			return buttonStyles.primLowLabel;
@@ -51,6 +72,8 @@ const getTextStyle = (variant: string) => {
 
 const buttonStyles = StyleSheet.create({
 	rootContainer: {
+		flexDirection: "row",
+		gap: 10,
 		paddingHorizontal: 16,
 		paddingVertical: 8,
 		borderRadius: 4,
