@@ -1,4 +1,4 @@
-import { Text, StyleSheet, Pressable } from "react-native";
+import { Text, StyleSheet, Pressable, View } from "react-native";
 
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -18,20 +18,22 @@ export const Button = ({
 		<Pressable
 			style={[buttonStyles.rootContainer, buttonVariantStyle, buttonStyle]}
 			onPress={onPress}>
-			<Text style={[buttonStyles.rootText, textStyle]}>{label}</Text>
-			{iconName && (
-				<MaterialIcons
-					name={iconName}
-					size={16}
-					color={
-						variant === "primary"
-							? colors.white
-							: variant === "secondary"
-							? colors.white
-							: colors.primary500
-					}
-				/>
-			)}
+			<View style={buttonStyles.buttonContainer}>
+				<Text style={[buttonStyles.rootText, textStyle]}>{label}</Text>
+				{iconName && (
+					<MaterialIcons
+						name={iconName}
+						size={16}
+						color={
+							variant === "primary"
+								? colors.white
+								: variant === "secondary"
+								? colors.white
+								: colors.primary500
+						}
+					/>
+				)}
+			</View>
 		</Pressable>
 	);
 };
@@ -72,11 +74,13 @@ const getTextStyle = (variant: string) => {
 
 const buttonStyles = StyleSheet.create({
 	rootContainer: {
-		flexDirection: "row",
-		gap: 10,
 		paddingHorizontal: 16,
 		paddingVertical: 8,
 		borderRadius: 4,
+	},
+	buttonContainer: {
+		flexDirection: "row",
+		gap: 10,
 		justifyContent: "center",
 		alignItems: "center",
 	},
